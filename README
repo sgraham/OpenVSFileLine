@@ -1,0 +1,13 @@
+Opens existing Visual Studio instance to given file/line.
+
+For use with Vim/Emacs/whatever. Build and copy binary to path.
+
+Vim mapping for F1 to open current file/line:
+
+    function! OpenInVS()
+        let line = line(".")
+        let file = expand("%:p")
+        exec "silent! !OpenVSFileLine " . file . " " . line
+    endfunction
+    map <F1> :call OpenInVS()<cr>
+
